@@ -1,6 +1,6 @@
 import React from "react";
 import ScrollBar from "./Scroll";
-
+import { ChakraProvider } from "@chakra-ui/react";
 
 const EntireCourse = () => {
 
@@ -63,11 +63,13 @@ const EntireCourse = () => {
     ]
 
     return(
+        <ChakraProvider>
         <div style={{display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
         {EntireCourse.map((el,i)=>
             <ScrollBar header={el.header} text={el.text} data={el.CourseDetails} key={i}/>
         )}
         </div>
+        </ChakraProvider>
     )
 }
 

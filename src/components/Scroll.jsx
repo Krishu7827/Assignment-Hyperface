@@ -2,21 +2,21 @@ import React from 'react'
 import './Scroll.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { useToast } from '@chakra-ui/react';
 
 
 
 const  ScrollBar = ({header,text,data,ind})=>{
- 
+  const toast = useToast()
     const Notify = ()=>{
-        toast('Wait, it is going to start',{
-            position: "top-right",
-autoClose: 3000,
- 
-closeOnClick: true,
-
-type:'info'
-        })
+       toast({
+        position:'top',
+        title: 'Wait',
+        description: "it's Going to Play",
+        status: 'success',
+        duration: 2000,
+        isClosable: true,
+       })
     }
 
 
